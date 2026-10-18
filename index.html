@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160e20">
+
+<title>For Zizee ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --pink: #f3b6ca;
+    --rose: #e99ab7;
+    --cream: #fff3e9;
+    --muted: #c9b4c5;
+    --bg: #160e20;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, #49243e 0%, transparent 55%),
+        radial-gradient(ellipse at 100% 100%, #30203d 0%, transparent 50%),
+        var(--bg);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font: inherit;
+}
+
+.ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .17;
+    background: #e96eaa;
+    animation: drift 12s ease-in-out infinite alternate;
+}
+
+.orb.one {
+    top: 10%;
+    left: -120px;
+}
+
+.orb.two {
+    right: -140px;
+    bottom: 5%;
+    background: #9a72db;
+    animation-delay: -6s;
+}
+
+@keyframes drift {
+    to { transform: translate(50px, 70px) scale(1.3); }
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: #f8d5e5;
+    opacity: 0;
+    animation: twinkle var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: .08; transform: scale(.7); }
+    50% { opacity: .75; transform: scale(1.2); }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 32px, 650px);
+    margin: auto;
+    padding: 52px 0 60px;
+}
+
+.topline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 34px;
+    color: #d8afc6;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.topline::before,
+.topline::after {
+    content: "";
+    width: 27px;
+    height: 1px;
+    background: #98627f;
+}
+
+.hero {
+    text-align: center;
+    animation: fadeUp 1.2s ease both;
+}
+
+.eyebrow {
+    color: var(--rose);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+h1, h2, .serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(52px, 12vw, 86px);
+    line-height: .96;
+    letter-spacing: -2px;
+}
+
+h1 em {
+    display: block;
+    color: var(--pink);
+    font-weight: 400;
+}
+
+.hero-description {
+    max-width: 390px;
+    margin: 23px auto 0;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hero-heart {
+    margin: 32px auto 0;
+    width: 57px;
+    height: 57px;
+    border: 1px solid #8b536e;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--pink);
+    font-size: 23px;
+    animation: heartBeat 2.5s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    8% { transform: scale(1.1); }
+    16% { transform: scale(1); }
+    24% { transform: scale(1.08); }
+    32% { transform: scale(1); }
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 46px 0 35px;
+    color: #c888a7;
+}
+
+.divider span {
+    height: 1px;
+    width: 65px;
+    background: linear-gradient(90deg, transparent, #87536e);
+}
+
+.divider span:last-child {
+    transform: rotate(180deg);
+}
+
+.letter-card {
+    position: relative;
+    border: 1px solid #694157;
+    border-radius: 5px;
+    padding: 32px clamp(22px, 6vw, 48px);
+    background: linear-gradient(145deg, #291827e8, #201526e8);
+    box-shadow: 0 25px 90px #00000030;
+    animation: fadeUp 1.3s .2s both;
+}
+
+.letter-card::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid #ffffff08;
+    pointer-events: none;
+}
+
+.letter-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c98cab;
+    margin-bottom: 24px;
+}
+
+.letter-card h2 {
+    font-size: clamp(34px, 8vw, 46px);
+    color: #f7d8e4;
+    line-height: 1.1;
+    margin-bottom: 21px;
+}
+
+.letter-card p {
+    font-size: 14px;
+    line-height: 2;
+    color: #d5c1d0;
+    font-weight: 300;
+    margin-bottom: 17px;
+}
+
+.letter-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 25px;
+    color: var(--pink);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+}
+
+.memory {
+    margin-top: 70px;
+    text-align: center;
+    animation: fadeUp 1.4s .4s both;
+}
+
+.section-label {
+    color: var(--rose);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 17px;
+}
+
+.memory h2 {
+    font-size: clamp(35px, 8vw, 48px);
+    line-height: 1.15;
+}
+
+.memory h2 em {
+    color: var(--pink);
+}
+
+.memory-copy {
+    max-width: 380px;
+    margin: 19px auto 27px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.open-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    padding: 15px 24px;
+    border: 1px solid #b87999;
+    border-radius: 3px;
+    color: #fff0f6;
+    background: linear-gradient(120deg, #75405f, #54324f);
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+.open-button:hover {
+    background: linear-gradient(120deg, #925577, #754565);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px #d66a9c20;
+}
+
+.open-button:focus-visible,
+.answer:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 4px;
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 28px;
+    padding: 27px 22px;
+    border-top: 1px solid #75475f;
+    border-bottom: 1px solid #75475f;
+    animation: fadeUp .8s ease both;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+.hidden-message h2 {
+    font-size: 38px;
+    color: var(--pink);
+    margin-bottom: 15px;
+}
+
+.hidden-message p {
+    font-size: 14px;
+    color: #ddcad9;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.question {
+    margin-top: 72px;
+    padding: 36px 20px;
+    text-align: center;
+    border-top: 1px solid #684056;
+    border-bottom: 1px solid #684056;
+}
+
+.question h2 {
+    font-size: clamp(37px, 8vw, 50px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.question h2 em {
+    color: var(--pink);
+}
+
+.question > p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 0 auto 25px;
+    max-width: 360px;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.answer {
+    min-width: 125px;
+    border: 1px solid #98617e;
+    border-radius: 3px;
+    background: transparent;
+    color: #fbe6ef;
+    padding: 13px 19px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: .25s ease;
+}
+
+.answer:hover {
+    background: #70425e;
+    transform: translateY(-2px);
+}
+
+.answer.primary {
+    background: #70425e;
+}
+
+.answer-response {
+    display: none;
+    margin: 24px auto 0;
+    color: var(--pink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    line-height: 1.5;
+    max-width: 390px;
+}
+
+.answer-response.show {
+    display: block;
+    animation: fadeUp .7s ease both;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 43px;
+    color: #9d8298;
+    font-size: 10px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.footer .tiny-heart {
+    display: block;
+    font-size: 17px;
+    color: #d995b3;
+    margin-bottom: 10px;
+}
+
+.petal {
+    position: fixed;
+    z-index: 3;
+    pointer-events: none;
+    top: -30px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translate(var(--drift), 110vh) rotate(650deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    .topline {
+        letter-spacing: 2.5px;
+        font-size: 9px;
+    }
+
+    .letter-card {
+        padding-top: 27px;
+        padding-bottom: 27px;
+    }
+
+    .question {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .answer {
+        min-width: 115px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+</div>
+
+<div class="stars" id="stars"></div>
+
+<main>
+    <div class="topline">a little something for you</div>
+
+    <section class="hero">
+        <p class="eyebrow">For someone who's becoming special ♡</p>
+
+        <h1>
+            Hey, <em>Zizee.</em>
+        </h1>
+
+        <p class="hero-description">
+            I had an idea. Instead of keeping all my thoughts
+            in a chat, I thought I'd make you a little corner
+            of the internet that's just for you.
+        </p>
+
+        <div class="hero-heart">♡</div>
+    </section>
+
+    <div class="divider">
+        <span></span> ✧ <span></span>
+    </div>
+
+    <section class="letter-card">
+        <div class="letter-label">A little note, from me to you</div>
+
+        <h2>Dear you,</h2>
+
+        <p>
+            It's funny how someone can go from being a stranger
+            to someone you catch yourself wanting to talk to again.
+        </p>
+
+        <p>
+            I know we're still getting to know each other,
+            and honestly, that's one of my favourite parts.
+            There's still so much I don't know about you —
+            your little habits, your stories, the things that
+            make you laugh when you least expect it.
+        </p>
+
+        <p>
+            But I like what I've discovered so far.
+            I like that there's a new person I get to know
+            a little more each day, and I like the possibility
+            of where our conversations might take us.
+        </p>
+
+        <p>
+            I'm not trying to rush anything or turn this into
+            some huge confession. I just wanted you to know
+            that talking to you has become a little highlight
+            of my day.
+        </p>
+
+        <p>
+            And if I'm being honest, I'm kind of curious
+            about the smile behind the screen, too. ♡
+        </p>
+
+        <div class="signature">— someone happy he met you</div>
+    </section>
+
+    <section class="memory">
+        <p class="section-label">Psst... one more thing</p>
+
+        <h2>
+            There's a little more<br>
+            <em>I wanted to tell you.</em>
+        </h2>
+
+        <p class="memory-copy">
+            It's nothing dramatic. Just something I might
+            have a harder time saying out loud than typing here.
+        </p>
+
+        <button class="open-button" id="revealButton"
+                onclick="revealMessage()">
+            <span>READ MY LITTLE SECRET</span>
+            <span>↗</span>
+        </button>
+
+        <div class="hidden-message" id="hiddenMessage">
+            <h2>Between us? ♡</h2>
+
+            <p>
+                I think you're slowly becoming someone
+                I look forward to hearing from.
+            </p>
+
+            <p>
+                And I won't lie — when your name pops up
+                on my screen, I do get a little happy.
+                Maybe a little more than I'd admit in person. :)
+            </p>
+
+            <p>
+                So here's to more random conversations,
+                silly jokes, getting to know each other,
+                and seeing what this little thing between
+                us could become.
+            </p>
+
+            <p>
+                No expectations. No rushing.
+                Just you, me, and a story that's only
+                beginning. 🌙
+            </p>
+        </div>
+    </section>
+
+    <section class="question">
+        <p class="section-label">Okay, your turn</p>
+
+        <h2>
+            Can I steal<br>
+            <em>a little more of your time?</em>
+        </h2>
+
+        <p>
+            More conversations, more laughs,
+            and maybe one day a little adventure together?
+        </p>
+
+        <div class="answers">
+            <button class="answer primary"
+                    onclick="answerQuestion('yes')">
+                Hmm... maybe ♡
+            </button>
+
+            <button class="answer"
+                    onclick="answerQuestion('definitely')">
+                You don't have to ask :)
+            </button>
+        </div>
+
+        <div class="answer-response" id="answerResponse"
+             aria-live="polite"></div>
+    </section>
+
+    <footer class="footer">
+        <span class="tiny-heart">♡</span>
+        MADE WITH A LITTLE COURAGE AND A LOT OF THOUGHT
+        <br>
+        Just for you, Zizee. ✧
+    </footer>
+</main>
+
+<script>
+const starField = document.getElementById("stars");
+
+for (let i = 0; i < 65; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.textContent = Math.random() > 0.5 ? "✧" : "·";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.setProperty("--duration", (2 + Math.random() * 4) + "s");
+    star.style.setProperty("--delay", (Math.random() * 5) + "s");
+    star.style.fontSize = (10 + Math.random() * 14) + "px";
+    starField.appendChild(star);
+}
+
+function makePetals(count = 16) {
+    const symbols = ["♡", "✧", "🌸", "♥"];
+
+    for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+            const petal = document.createElement("span");
+            petal.className = "petal";
+            petal.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.fontSize = (12 + Math.random() * 15) + "px";
+            petal.style.color = ["#f3b6ca", "#f6dce9", "#d9a6ef"][
+                Math.floor(Math.random() * 3)
+            ];
+            petal.style.setProperty(
+                "--drift",
+                (Math.random() * 180 - 90) + "px"
+            );
+            petal.style.animationDuration =
+                (4 + Math.random() * 4) + "s";
+
+            document.body.appendChild(petal);
+
+            setTimeout(() => petal.remove(), 8500);
+        }, i * 130);
+    }
+}
+
+function revealMessage() {
+    const message = document.getElementById("hiddenMessage");
+    const button = document.getElementById("revealButton");
+
+    const isOpen = message.classList.toggle("show");
+
+    button.querySelector("span:first-child").textContent =
+        isOpen ? "CLOSE MY LITTLE SECRET" : "READ MY LITTLE SECRET";
+
+    if (isOpen) {
+        makePetals(22);
+
+        setTimeout(() => {
+            message.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, 100);
+    }
+}
+
+function answerQuestion(answer) {
+    const response = document.getElementById("answerResponse");
+
+    if (answer === "yes") {
+        response.textContent =
+            "I'll take that maybe... and do my best to earn a yes. ♡";
+    } else {
+        response.textContent =
+            "Well, now you've got me smiling at my screen. 🌷";
+    }
+
+    response.classList.remove("show");
+    void response.offsetWidth;
+    response.classList.add("show");
+
+    makePetals(20);
+}
+</script>
+
+</body>
+</html>
